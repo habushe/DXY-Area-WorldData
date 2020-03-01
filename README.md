@@ -9,7 +9,9 @@
 
 ### 代码说明
 [script2.py](script2.py)为请求[丁香园对外开放数据接口API](https://lab.isaaclin.cn/nCoV/api/area)并进行解析处理
+
 [csvfiter.py](csvfiter.py)为对[script2.py](script2.py)得到的数据文件[foreign\csv\foreignArea.csv](foreign\csv\foreignArea.csv)进行去重和数据修补处理
+
 [csv_conpute.py](csv_conpute.py)为对[csvfiter.py](csvfiter.py) 去重和修补后的数据[out1.csv](out1.csv)进行确诊、治愈、死亡的新增统计计算
 
 #### CSV文件列表
