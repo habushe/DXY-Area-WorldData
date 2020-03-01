@@ -3,7 +3,7 @@
 
 简体中文 | [English](README.en.md)
 
-本项目为对Blankerl 2019新型冠状病毒（COVID-19/2019-nCoV）疫情状况的时间序列数据仓库(https://github.com/BlankerL/DXY-COVID-19-Data)项目的修改，数据来源为[丁香园](https://3g.dxy.cn/newh5/view/pneumonia)。
+本项目为对Blankerl [2019新型冠状病毒（COVID-19/2019-nCoV）疫情状况的时间序列数据仓库](https://github.com/BlankerL/DXY-COVID-19-Data)项目的修改，数据来源为[丁香园](https://3g.dxy.cn/newh5/view/pneumonia)。
 
 数据由丁香园对外开放数据接口API(https://lab.isaaclin.cn/nCoV/api/area)获得，每小时检测一次更新，若有更新则推送至数据仓库中。
 
