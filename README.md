@@ -20,3 +20,10 @@
 由于API接口时常不稳定，因此此项目也会定时向`json`文件夹中推送静态的JSON文件更新。JSON文件与API中提供的JSON完全一致。
 
 由于本人精力有限（且为小白），不接受数据定制。如对数据有更多的要求，烦请自行处理。
+
+###  本项目代码借鉴说明
+
+本项目代码借鉴了
+  Blankerl 的[2019新型冠状病毒（COVID-19/2019-nCoV）疫情状况的时间序列数据仓库](https://github.com/BlankerL/DXY-COVID-19-Data)项目代码
+  Avens666 的[Avens666/COVID-19-2019-nCoV-Infection-Data-cleaning-](https://github.com/Avens666/COVID-19-2019-nCoV-Infection-Data-cleaning-)项目代码
+
