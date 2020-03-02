@@ -50,6 +50,7 @@ def listener():
         static_data = json.load(json_file)
         json_file.close()
         while True:
+            print("request开始请求数据")
             request = requests.get(url='https://lab.isaaclin.cn/nCoV/api/' + collections.get(collection))
             if request.status_code == 200:
                 current_data = request.json()
