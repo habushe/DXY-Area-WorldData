@@ -18,7 +18,7 @@ import pandas as pd
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
 logger = logging.getLogger(__name__)
 collections = {
-    'foreignArea': 'area?latest=0'
+    'foreignArea': 'area?latest=0'#?latest=0
 }
 time_types = ('pubDate', 'createTime', 'modifyTime', 'dataInfoTime', 'crawlTime', 'updateTime')
 
@@ -61,6 +61,7 @@ def listener():
                 continue
 
         if static_data != current_data:
+            print("json_dumper开始更新")
             json_dumper(collection=collection, content=current_data)
             # changed_files.append('foreign/json/' + collection + '.json')
             print("json_dumper更新完成")

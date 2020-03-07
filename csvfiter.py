@@ -53,6 +53,7 @@ for date_t in df_date:
         suspectedCount = df1['suspectedCount']
         curedCount = df1['curedCount'].max()
         deadCount = df1['deadCount'].max()
+       # updateTime2=df1['updateTime'].max()
 
         for country in df_country:
             df2 = df1.loc[(df1['countryName'].str.contains(country)), :]  # df2筛选出某个市的数据
@@ -67,6 +68,7 @@ for date_t in df_date:
                                     '治愈': curedCount,
                                     '死亡': deadCount,
                                     '日期': date_t},
+                                    #'更新时间':updateTime2},
                                    pandas.Index(range(1)))
             #            print(new.head())
             df = df.append(new)
