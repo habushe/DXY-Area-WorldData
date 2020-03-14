@@ -37,6 +37,7 @@ def git_manager(changed_files):
 def listenerrun():
     while True:
         listener()
+
         time.sleep(3600)
 
 def listener():
@@ -63,13 +64,13 @@ def listener():
         if static_data != current_data:
             print("json_dumper开始更新")
             json_dumper(collection=collection, content=current_data)
-            # changed_files.append('foreign/json/' + collection + '.json')
+            changed_files.append('foreign/json/' + collection + '.json')
             print("json_dumper更新完成")
             csv_dumper(collection=collection, content=current_data)
-            # changed_files.append('foreign/csv/' + collection + '.csv')
+            changed_files.append('foreign/csv/' + collection + '.csv')
             logger.info('{collection} updated!'.format(collection=collection))
-        # if changed_files:
-        #         git_manager(changed_files=changed_files)
+        if changed_files:
+                git_manager(changed_files=changed_files)
 
 def json_dumper(collection, content):
     json_file = open(
@@ -114,3 +115,4 @@ def csv_dumper(collection, content):
 
 if __name__ == '__main__':
     listenerrun()
+
