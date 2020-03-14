@@ -64,10 +64,10 @@ def listener():
         if static_data != current_data:
             print("json_dumper开始更新")
             json_dumper(collection=collection, content=current_data)
-            changed_files.append('foreign/json/' + collection + '.json')
+            changed_files.append('foreign/json/' + 'foreignArea.json')
             print("json_dumper更新完成")
             csv_dumper(collection=collection, content=current_data)
-            changed_files.append('foreign/csv/' + collection + '.csv')
+            changed_files.append('foreign/csv/' + 'foreignArea.csv')
             logger.info('{collection} updated!'.format(collection=collection))
         if changed_files:
                 git_manager(changed_files=changed_files)
