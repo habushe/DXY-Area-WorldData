@@ -69,8 +69,8 @@ def listener():
             csv_dumper(collection=collection, content=current_data)
             changed_files.append('foreign/csv/' + 'foreignArea.csv')
             logger.info('{collection} updated!'.format(collection=collection))
-        if changed_files:
-                git_manager(changed_files=changed_files)
+        # if changed_files:
+        #         git_manager(changed_files=changed_files)
 
 def json_dumper(collection, content):
     json_file = open(
