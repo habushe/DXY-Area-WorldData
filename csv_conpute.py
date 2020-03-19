@@ -7,7 +7,7 @@ from openpyxl.styles import Alignment
 
 # 输入输出参数，根据需要设置
 input_file = "out1.csv"
-output_file = "data/out_3_18.csv"
+output_file = "data/out_3_19.csv"
 excel_file = "疫情数据分析.xlsx"  # "test.xlsx"
 b_export_excel = False
 

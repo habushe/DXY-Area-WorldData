@@ -18,7 +18,7 @@ import pandas as pd
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
 logger = logging.getLogger(__name__)
 collections = {
-    'foreignArea': 'area?latest=0'#?latest=0
+    'foreignArea': 'area'#?latest=0
 }
 time_types = ('pubDate', 'createTime', 'modifyTime', 'dataInfoTime', 'crawlTime', 'updateTime')
 
