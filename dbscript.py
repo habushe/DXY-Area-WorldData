@@ -84,7 +84,11 @@ class Listener:
                 all_result['provinceName'] = province_dict['provinceName']
                 # all_result['continentName'] = province_dict['continentName']
                 # all_result['continentEnglishName'] = province_dict['continentEnglishName']
-                all_result['countryName'] = province_dict['countryName']
+                try:
+                    all_result['countryName'] = province_dict['countryName']
+                except KeyError:
+                    all_result['countryName'] = None#中国
+               # all_result['countryName'] = province_dict['countryName']
                 # all_result['countryEnglishName'] = province_dict['countryEnglishName']
                 # all_result['currentConfirmedCount'] = province_dict['currentConfirmedCount']
                 all_result['confirmedCount'] = province_dict['confirmedCount']
