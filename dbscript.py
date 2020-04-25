@@ -54,9 +54,15 @@ class DB:
                     '$sort': {
                         'updateTime': -1,
                         'crawlTime': -1
-                    }
-                }
-            ]
+                    },
+
+
+                },
+
+            ],
+
+            allowDiskUse=True,
+            maxTimeMS=1000*60*60*2
         )
 
 
@@ -87,8 +93,9 @@ class Listener:
                 try:
                     all_result['countryName'] = province_dict['countryName']
                 except KeyError:
-                    all_result['countryName'] = None#中国
-               # all_result['countryName'] = province_dict['countryName']
+                    all_result['countryName'] = province_dict['provinceName']
+
+                all_result['countryName'] = province_dict['countryName']
                 # all_result['countryEnglishName'] = province_dict['countryEnglishName']
                 # all_result['currentConfirmedCount'] = province_dict['currentConfirmedCount']
                 all_result['confirmedCount'] = province_dict['confirmedCount']
@@ -104,7 +111,7 @@ class Listener:
                 df2 = df2.dropna()
                 df2.to_csv(
                     path_or_buf=os.path.join(
-                        os.path.split(os.path.realpath(__file__))[0], 'foreign/csv', 'foreignArea.csv'),
+                        os.path.split(os.path.realpath(__file__))[0], 'foreign/csv', 'dbforeignArea.csv'),
                     index=False, encoding='utf_8_sig'
                 )
                 logger.info('foreign/csv updated!'.format(collection=collection))

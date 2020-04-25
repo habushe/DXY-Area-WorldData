@@ -6,8 +6,8 @@ from openpyxl import load_workbook
 from openpyxl.styles import Alignment
 
 # 输入输出参数，根据需要设置
-input_file = "out1.csv"
-output_file = "data/out_3_23.csv"
+input_file = "out3.csv"
+output_file = "data/out_4_25.csv"
 excel_file = "疫情数据分析.xlsx"  # "test.xlsx"
 b_export_excel = False
 
@@ -18,10 +18,10 @@ pandas.set_option('display.max_rows', None)
 # 设置value的显示长度为100，默认为50
 pandas.set_option('max_colwidth', 200)
 
-def Csvcomputerrun():
-    while True:
-        csvcomputer()
-        time.sleep(3600)
+# def Csvcomputerrun():
+#     while True:
+#         csvcomputer()
+#         time.sleep(3600)
 
 def  csvcomputer():
 
@@ -122,4 +122,4 @@ def  csvcomputer():
         writer.save()
 
 if __name__ == '__main__':
-    Csvcomputerrun()
+    csvcomputer()

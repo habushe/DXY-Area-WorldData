@@ -4,13 +4,13 @@ from datetime import timedelta
 import time
 
 input_file = "foreign/csv/foreignArea.csv"
-output_file = "out1.csv"
+output_file = "out3.csv"
 
 
-def Csvtiterrun():
-    while True:
-        csvtiter()
-        time.sleep(3600)
+# def Csvtiterrun():
+#     while True:
+#         csvtiter()
+#         time.sleep(3600)
 
 def  csvtiter():
 
@@ -105,4 +105,4 @@ def  csvtiter():
     df.to_csv(output_file, encoding="utf_8_sig", index=False)  # 为保证excel打开兼容，输出为UTF8带签名格式
 
 if __name__ == '__main__':
-    Csvtiterrun()
+    csvtiter()

@@ -103,14 +103,14 @@ def csv_dumper(collection, content):
             print(all_result)
             foreign_structured_results.append(all_result)
 
-            df2 = pd.DataFrame(foreign_structured_results)
-            df2 = df2.dropna()
-            df2.to_csv(
-                path_or_buf=os.path.join(
-                    os.path.split(os.path.realpath(__file__))[0], 'foreign/csv', 'foreignArea.csv'),
-                index=False, encoding='utf_8_sig'
-            )
-            logger.info('foreign/csv updated!'.format(collection=collection))
+        df2 = pd.DataFrame(foreign_structured_results)
+        df2 = df2.dropna()
+        df2.to_csv(
+            path_or_buf=os.path.join(
+                os.path.split(os.path.realpath(__file__))[0], 'foreign/csv', 'foreignArea.csv'),
+            mode='a+', index=False, encoding='utf_8_sig'
+        )
+        logger.info('foreign/csv updated!'.format(collection=collection))
 
 
 if __name__ == '__main__':
