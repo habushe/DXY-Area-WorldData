@@ -1,4 +1,3 @@
-
 import pandas
 from datetime import timedelta
 import time
@@ -12,8 +11,7 @@ output_file = "out3.csv"
 #         csvtiter()
 #         time.sleep(3600)
 
-def  csvtiter():
-
+def csvtiter():
     # pandas显示配置 方便调试
     # 显示所有列
     pandas.set_option('display.max_columns', None)
@@ -28,19 +26,15 @@ def  csvtiter():
     except:
         dataf = pandas.read_csv(input_file, encoding='gb2312')
 
-
-
     dataf['updateTime'] = pandas.to_datetime(dataf['updateTime'])
     dataf['date'] = dataf['updateTime'].apply(lambda x: x.strftime('%Y-%m-%d'))
     dataf['date'] = pandas.to_datetime(dataf['date'])
     # print(type(dataf))  print(dataf.dtypes)   print(dataf.head())
 
-
     # 提取省列表
     df_t = dataf['provinceName']
     df_province = df_t.drop_duplicates()  # 去重 这个返回Series对象
     # df_province = df_t.unique()  # 去重 这个返回 ndarray
-
 
     df = pandas.DataFrame(index=None)
 
@@ -60,7 +54,7 @@ def  csvtiter():
             suspectedCount = df1['suspectedCount']
             curedCount = df1['curedCount'].max()
             deadCount = df1['deadCount'].max()
-           # updateTime2=df1['updateTime'].max()
+            # updateTime2=df1['updateTime'].max()
 
             for country in df_country:
                 df2 = df1.loc[(df1['countryName'].str.contains(country)), :]  # df2筛选出某个市的数据
@@ -69,13 +63,13 @@ def  csvtiter():
                 df2 = df2.loc[(df2['updateTime'] == df2['updateTime'].max()), :]
 
                 new = pandas.DataFrame({'地区': name,
-                                        '国家':country,
+                                        '国家': country,
                                         '确诊': confirmedCount,
-                                        '疑似':suspectedCount,
+                                        '疑似': suspectedCount,
                                         '治愈': curedCount,
                                         '死亡': deadCount,
                                         '日期': date_t},
-                                        #'更新时间':updateTime2},
+                                       # '更新时间':updateTime2},
                                        pandas.Index(range(1)))
                 #            print(new.head())
                 df = df.append(new)
@@ -103,6 +97,7 @@ def  csvtiter():
     # print(df)
 
     df.to_csv(output_file, encoding="utf_8_sig", index=False)  # 为保证excel打开兼容，输出为UTF8带签名格式
+
 
 if __name__ == '__main__':
     csvtiter()
