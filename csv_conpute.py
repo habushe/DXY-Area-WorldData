@@ -7,8 +7,8 @@ from openpyxl.styles import Alignment
 
 # 输入输出参数，根据需要设置
 input_file = "out3.csv"
-output_file = "data/out_5_08.csv"
-excel_file = "疫情数据分析.xlsx"  # "test.xlsx"
+output_file = "data/out_5_10.csv"
+excel_file = "5月8日17点8分的世界疫情数据及分析.xlsx"  # "test.xlsx"
 b_export_excel = False
 
 # 显示所有列
