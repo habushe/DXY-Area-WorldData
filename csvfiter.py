@@ -9,7 +9,7 @@ output_file = "out3.csv"
 # def Csvtiterrun():
 #     while True:
 #         csvtiter()
-#         time.sleep(3600)
+#         time.sleep(3600m)
 
 def csvtiter():
     # pandas显示配置 方便调试
@@ -19,7 +19,6 @@ def csvtiter():
     pandas.set_option('display.max_rows', None)
     # 设置value的显示长度为100，默认为50
     pandas.set_option('max_colwidth', 200)
-
     # ！！！ 根据需要选择合适的字符集
     try:
         dataf = pandas.read_csv(input_file, encoding='UTF-8')
